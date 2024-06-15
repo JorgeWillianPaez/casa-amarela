@@ -1,13 +1,27 @@
 import "./App.css";
-import VetorAtividade1 from "./images/vetorAtividades1.svg";
-import VetorAtividade2 from "./images/vetorAtividades2.svg";
+import { useNavigate } from "react-router-dom";
 import Logo from "./images/logo.svg";
 import Background from "./images/background.png";
 import VetorWhats from "./images/vetorWhats.svg";
 import VetorContatos from "./images/vetorContatos.svg";
 import WhatsappIcon from "./images/whatsIcon.svg";
+import FotoAtividades1 from "./images/foto-atividades-1.jpeg";
+import FotoAtividades2 from "./images/foto-atividades-2.jpeg";
+import FotoSobreNos from "./images/foto-sobre-nos.jpeg";
 
 const App = () => {
+  const navigate = useNavigate();
+
+  const login = () => {
+    const logado = localStorage.getItem("logado");
+
+    if (logado) {
+      navigate("/admin");
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
     <div className="App">
       <header>
@@ -16,16 +30,16 @@ const App = () => {
           <a href="#atividades">Atividades</a>
           <a href="#sobre">Sobre nós</a>
           <a href="#contatos">Contatos</a>
-          <button>Admin</button>
+          {/* <button onClick={login}>Admin</button> */}
         </div>
       </header>
-      <img src={Background} alt="background" />
+      <img src={Background} width={"100%"} alt="background" />
       <main>
         <div id="atividades" className="atividades">
           <h1>Atividades</h1>
           <div>
             <div className="bloco blocoUm">
-              <img src={VetorAtividade1} alt="vetorAtividades" />
+              <img src={FotoAtividades1} alt="vetorAtividades" />
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
                 posuere tempus elementum. Ut rutrum sagittis cursus. Mauris
@@ -50,7 +64,7 @@ const App = () => {
                 eget lacus. Ut eu lorem tincidunt, dictum lectus sit amet,
                 laoreet urna.
               </p>
-              <img src={VetorAtividade2} alt="vetorAtividades" />
+              <img src={FotoAtividades2} alt="vetorAtividades" />
             </div>
           </div>
         </div>
@@ -67,6 +81,7 @@ const App = () => {
             laoreet vitae eget lacus. Ut eu lorem tincidunt, dictum lectus sit
             amet, laoreet urna.
           </p>
+          <img src={FotoSobreNos} alt="Foto sobre nós" />
         </div>
         <div id="contatos">
           <div style={{ position: "relative" }}>
@@ -88,8 +103,8 @@ const App = () => {
               style={{
                 fontFamily: "Nunito",
                 position: "absolute",
-                color: "black",
-                right: "132px",
+                color: "white",
+                right: "136px",
                 bottom: "58px",
                 width: "126px",
               }}

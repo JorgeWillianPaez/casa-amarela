@@ -214,6 +214,17 @@ main {
   text-align: justify;
 }
 
+.blocoUm img {
+  width: 600px;
+  height: 550px;
+  border-radius: 12px;
+}
+
+.blocoDois img {
+  width: 600px;
+  border-radius: 12px;
+}
+
 #sobre {
   background-color: white;
   width: 75%;
@@ -234,6 +245,12 @@ main {
   font-family: "Nunito", sans-serif;
   font-size: 20px;
   text-align: justify;
+}
+
+#sobre img {
+  width: 900px;
+  border-radius: 12px;
+  margin-top: 100px;
 }
 
 #contatos {
@@ -266,6 +283,7 @@ main {
   justify-content: center;
   align-items: center;
   margin-top: 240px;
+  row-gap: 10px;
 }
 
 .contatosContainer p {
