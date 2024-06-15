@@ -16,6 +16,7 @@ const App = () => {
           <a href="#atividades">Atividades</a>
           <a href="#sobre">Sobre nós</a>
           <a href="#contatos">Contatos</a>
+          <button>Admin</button>
         </div>
       </header>
       <img src={Background} alt="background" />
